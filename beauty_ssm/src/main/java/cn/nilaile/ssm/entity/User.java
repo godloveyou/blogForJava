@@ -9,6 +9,8 @@ public class User {
 
     private String userName;
 
+    private String password;
+
     private Date lastLogin;
 
     private String email;
@@ -45,6 +47,14 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName == null ? null : userName.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
     public Date getLastLogin() {
