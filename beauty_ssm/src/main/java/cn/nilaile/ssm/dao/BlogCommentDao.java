@@ -2,7 +2,7 @@ package cn.nilaile.ssm.dao;
 
 import cn.nilaile.ssm.entity.BlogComment;
 
-public interface BlogCommentMapper {
+public interface BlogCommentDao {
     int deleteByPrimaryKey(Integer id);
 
     int insert(BlogComment record);

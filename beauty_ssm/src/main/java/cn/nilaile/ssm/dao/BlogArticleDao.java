@@ -2,7 +2,7 @@ package cn.nilaile.ssm.dao;
 
 import cn.nilaile.ssm.entity.BlogArticle;
 
-public interface BlogArticleMapper {
+public interface BlogArticleDao {
     int deleteByPrimaryKey(Integer id);
 
     int insert(BlogArticle record);

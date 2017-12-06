@@ -2,7 +2,7 @@ package cn.nilaile.ssm.dao;
 
 import cn.nilaile.ssm.entity.BlogTag;
 
-public interface BlogTagMapper {
+public interface BlogTagDao {
     int deleteByPrimaryKey(Integer id);
 
     int insert(BlogTag record);
