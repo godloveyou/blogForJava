@@ -22,7 +22,7 @@ public class BindingResultAop {
 
     private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* com.yingjun.ssm.web.*.*(..))")
+    @Pointcut("execution(* cn.nilaile.ssm.web.*.*(..))")
     public void aopMethod(){}
 
     @Around("aopMethod()")

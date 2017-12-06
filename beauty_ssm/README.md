@@ -21,4 +21,13 @@
 2.Goals-->输入tomcat:run
 3.点击run
 
-###参考文档###
+###Mybaits笔记###
+- Mybatis调用存储过程
+    <select id="bugWithProcedure" statementType="CALLABLE">
+        call execute_buy(
+          #{userId,jdbcType=BIGINT,mode=IN},
+          #{goodsId,jdbcType=BIGINT,mode=IN},
+          #{title,jdbcType=VARCHAR,mode=IN},
+          #{result,jdbcType=INTEGER,mode=OUT}
+        )
+    </select>
