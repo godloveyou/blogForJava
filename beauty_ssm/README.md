@@ -16,10 +16,15 @@
 ###**架构图：**
 ![](http://i.imgur.com/vc6iu0X.png)
 
-### 运行方式##
+### Maven项目运行方式##
 1.RUN AS-->RUN Configuration-->
 2.Goals-->输入tomcat:run
 3.点击run
+
+
+##Mybatis配置运行方式##
+https://www.cnblogs.com/gosky/p/5518748.html
+命令： mybatis-generator:generate  -e  加了“-e ”是为了让该插件输出详细信息，这样可以定位问题
 
 ###Mybaits笔记###
 - Mybatis调用存储过程
