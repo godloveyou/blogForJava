@@ -18,12 +18,30 @@
     user_id, mobile, user_name, password, last_login, email, is_staff, is_active, avatar, 
     qq, create_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  
+  <select id="findByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from blog_user
     where user_id = #{userId,jdbcType=VARCHAR}
   </select>
+  
+  <select id="findByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog_user
+    where user_name = #{username,jdbcType=VARCHAR}
+  </select>
+  
+  
+  <select id="findByMobile" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog_user
+    where mobile = #{mobile,jdbcType=VARCHAR}
+  </select>
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from blog_user
     where user_id = #{userId,jdbcType=VARCHAR}
@@ -43,79 +61,8 @@
       #{isStaff,jdbcType=CHAR}, #{isActive,jdbcType=CHAR}, #{avatar,jdbcType=VARCHAR}, 
       #{qq,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="cn.nilaile.ssm.entity.User">
-    insert into blog_user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="mobile != null">
-        mobile,
-      </if>
-      <if test="userName != null">
-        user_name,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="lastLogin != null">
-        last_login,
-      </if>
-      <if test="email != null">
-        email,
-      </if>
-      <if test="isStaff != null">
-        is_staff,
-      </if>
-      <if test="isActive != null">
-        is_active,
-      </if>
-      <if test="avatar != null">
-        avatar,
-      </if>
-      <if test="qq != null">
-        qq,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="mobile != null">
-        #{mobile,jdbcType=VARCHAR},
-      </if>
-      <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="lastLogin != null">
-        #{lastLogin,jdbcType=TIMESTAMP},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="isStaff != null">
-        #{isStaff,jdbcType=CHAR},
-      </if>
-      <if test="isActive != null">
-        #{isActive,jdbcType=CHAR},
-      </if>
-      <if test="avatar != null">
-        #{avatar,jdbcType=VARCHAR},
-      </if>
-      <if test="qq != null">
-        #{qq,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
+  
+  
   <update id="updateByPrimaryKeySelective" parameterType="cn.nilaile.ssm.entity.User">
     update blog_user
     <set>
@@ -152,6 +99,8 @@
     </set>
     where user_id = #{userId,jdbcType=VARCHAR}
   </update>
+  
+  
   <update id="updateByPrimaryKey" parameterType="cn.nilaile.ssm.entity.User">
     update blog_user
     set mobile = #{mobile,jdbcType=VARCHAR},

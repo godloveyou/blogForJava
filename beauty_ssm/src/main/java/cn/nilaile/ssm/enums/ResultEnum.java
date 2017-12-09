@@ -21,6 +21,7 @@ public enum ResultEnum {
 
 	// 用户相关异常
 	INVALID_USER(1001001, "无效用户");
+	
 
 	private int state;
 

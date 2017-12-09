@@ -10,9 +10,18 @@ public class DataResult<T> implements Serializable {
 	private String msg;
 	private List<T> data;
 	
+	public DataResult(){
+		
+	}
 	public DataResult(boolean success,List<T> data){
 		super();
 		this.data = data;
+		this.success = success;
+	}
+	
+	public DataResult(boolean success,String msg){
+		super();
+		this.msg = msg;
 		this.success = success;
 	}
 	

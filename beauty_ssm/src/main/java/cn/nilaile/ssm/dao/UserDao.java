@@ -11,9 +11,13 @@ public interface UserDao {
 
     int insertSelective(User record);
 
-    User selectByPrimaryKey(@Param("userId") String userId);
+    User findByUserId(@Param("userId") String userId);
 
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+    
+    User findByUserName(String username);
+    
+    User findByMobile(String mobile);
 }
